@@ -1,0 +1,31 @@
+{% extends '/admin/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+        <h2 class="text-center font-weight-bold " style="color: #632343;">FeedBacks </h2>
+
+  <table  class="table ">
+    <tr>
+      <th scope="col">User Details </th>
+      <th scope="col">Feedback </th>
+      <th scope="col">Date </th>
+      <th scope="col">Contractor </th>
+
+    </tr>
+     {% for i in val %}
+    <tr>
+      <td>
+        {{i[1]}}{{i[2]}}<br>
+        {{i[3]}}<br>
+        {{i[6]}}
+      </td>
+      <td>&nbsp;{{i[9]}}</td>
+      <td>{{i[11]}}</td>
+       <td>{{i[14]}} {{i[15]}}</td>
+    </tr>
+     {% endfor %}
+  </table>
+</div>
+{% endblock %}

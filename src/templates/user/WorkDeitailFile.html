@@ -1,0 +1,26 @@
+{% extends '/user/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+
+      <form id="form1" name="form1" method="post" action="/Get_Work_Request" enctype="multipart/form-data">
+
+        <h2 class="text-center font-weight-bold pt-4" style="color: #632343;">Work Details</h2>
+        <div class="form-group">
+          <br><br><br>
+          <input type="file" class="form-control" required name="files">
+        </div>
+
+
+        <button type="submit" class="btn float-right mt-5" style="background-color:#632343;"> <span
+            style="color: white;">Submit </span></button>
+      </form>
+    </div>
+  </div>
+  </form>
+
+
+</div>
+{% endblock %}

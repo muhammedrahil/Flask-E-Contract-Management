@@ -1,0 +1,42 @@
+{% extends '/admin/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+      <h2 class="text-center font-weight-bold " style="color: #632343;"> Contractors</h2>
+      <table class="table mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Contract</th>
+            <th scope="col">Sarvices</th>
+            <th scope="col">gender</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in val %}
+          <tr>
+
+            <td>{{i[1]}} {{i[2]}}</td>
+            <td>{{i[4]}} {{i[5]}} {{i[6]}}</td>
+            <td>{{i[7]}}</td>
+            <td> {{i[8]}}</td>
+            <td>{{i[3]}}</td>
+            <td>
+              <a href="/ApproveRejectContractor?id={{i[9]}}" class="btn btn-danger"
+                onclick="return confirm('Are you sure? delete this {{i[1]}} {{i[2]}} contractor')">reject</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

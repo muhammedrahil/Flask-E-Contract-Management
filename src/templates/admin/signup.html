@@ -1,0 +1,109 @@
+{% extends '/admin/index.html' %}
+
+{% block content %}
+
+    <form id="form1" name="form1" method="post" action="/add_signup">
+           
+
+      
+                    <h2 class="text-center font-weight-bold "> CREATE NEW ACCOUNT</h2>
+                    
+                    <br><br>
+                        <div class="form-group ">
+                        <label for="exampleInputEmail1">UserName</label>
+                        <input type="text" class="form-control" name="user" required
+                             placeholder="Enter your UserName">
+                    </div>
+
+            <div class="form-group ">
+                        <label for="exampleInputEmail1">Password</label>
+                        <input type="password" class="form-control" name="password"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
+                             placeholder="Enter New Password">
+                    </div>
+              <br>
+             <label><b>Enter Your Details</b></label>
+                    <br>  <br>
+                    <label for="exampleInputEmail1">catogary</label>
+                    <br>
+                    <select name="catogary" class="form-select col-md-3" >
+                        <option value="Contractor" style="color: #632343;">Contractor</option>
+                        <option value="Customer"  style="color: #632343;" >Customer</option>
+                      </select>
+                      <br><br>
+
+
+
+                    <div class="form-group ">
+                        <label for="exampleInputEmail1">First Name</label>
+                        <input type="text" class="form-control" name="textfield" required  pattern="[A-Z a-z.]{3,25}"id="exampleInputEmail1"
+                             placeholder="Enter your First name">
+                    </div>
+                    <div class="form-group ">
+                        <label for="exampleInputEmail1">Last Name</label>
+                        <input type="text" class="form-control" name="textfield1" pattern="[A-Z a-z.]{3,25}" required id="exampleInputEmail1"
+                            placeholder="Enter your Last name">
+                    </div>
+                    <label>Gender</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="textfield3" checked id="inlineRadio1" value="Male">
+                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="textfield3"   id="inlineRadio2" value="Female">
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                      </div>
+                      <br><br>
+
+                      <div class="form-group ">
+                        <label for="exampleInputEmail1">Place</label>
+                        <select name="textfield4" class="form-select  mt-5">
+                            <option value="Areecode" style="color: #632343;">Areecode</option>
+                            <option value="manjeri" style="color: #632343;">manjeri</option>
+                            <option value="malapuram" style="color: #632343;">malapuram</option>
+                            <option value="mukkam" style="color: #632343;">mukkam</option>
+                            <option value="kizisheri" style="color: #632343;">kizisheri</option>
+                            <option value="kondotty" style="color: #632343;">kondotty</option>
+                          </select>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="exampleInputEmail1">Post Office</label>
+                        <input type="text" class="form-control" name="textfield5" required pattern="[A-Z a-z.]{3,25}"
+                             placeholder="Enter your Post Office">
+                    </div>
+                    <div class="form-group ">
+                        <label for="exampleInputEmail1">Pincode</label>
+                        <input type="text" class="form-control" name="textfield6" required
+                             placeholder="Enter your Pincode">
+                    </div>
+                    <div class="form-group ">
+                        <label for="exampleInputEmail1">Services</label><br>
+                        <select name="textfield8" class="form-select" >
+                            
+                            <option value="digital Markating" style="color: #632343;">digital Markating</option>
+                            <option value="Plumber" style="color: #632343;">Plumber</option>
+                            <option value="Engineer" style="color: #632343;">Engineer</option>
+                            <option value="Construct" style="color: #632343;">Construct</option>
+                            <option value="Shop" style="color: #632343;">Shop</option>
+                            <option value="Web Application Developer" style="color: #632343;">Web Application Developer</option>
+                           
+                          </select>
+                    </div>
+                    <div class="form-group ">
+                        <label for="exampleInputEmail1">Phone  Number</label>
+                        <input type="number" class="form-control" name="textfield7" required pattern="[6789][0-9]{6}"
+                             placeholder="Enter your Phone  Number">
+                    </div>
+                  
+
+
+
+                  
+                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+    </form>
+    </div>
+    </div>
+    </form>
+
+    {% endblock %}

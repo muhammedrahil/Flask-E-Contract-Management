@@ -1,0 +1,33 @@
+{% extends '/admin/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+        <h2 class="text-center font-weight-bold " style="color: #632343;">Complaints </h2>
+
+  <table class="table ">
+    <tr>
+      <th scope="col">User Details </th>
+      <th scope="col">Contractor Details </th>
+      <th scope="col">Contractor Service </th>
+      <th scope="col">Complains </th>
+      <th scope="col">Date </th>
+      <th scope="col"> </th>
+    </tr>
+     {% for i in  val %}
+    <tr>
+      <td>{{i[1]}}{{i[2]}}<br>
+        {{i[3]}}<br>
+        {{i[6]}}</td>
+        <td> {{i[15]}} {{i[16]}} <br> {{i[18]}} {{i[21]}}</td>
+        <td> {{i[22]}}</td>
+      <td> {{i[9]}}</td>
+      <td> {{i[10]}}</td>
+      <td><a href="/sent_replynew?id={{i[8]}}" class="btn btn-primary">reply user</a></td>
+      <td><a href="?id={{i[14]}}" class="btn btn-primary">Massege Contractor</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div></div></div></div>
+  {% endblock %}

@@ -1,0 +1,27 @@
+{% extends '/admin/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6 m-auto">
+      <div class="container  pl-5">
+        <form id="form1" name="form1" method="post" action="/sent_reply">
+          <div>
+            <table class="table">
+              <tr>
+                <th scope="col">Reply</th>
+                <td>
+                  <textarea style="height: 10rem;width: 30rem;" required name="textarea"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="submit" class="btn btn-primary "  name="Submit" value="sent" />
+                </td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

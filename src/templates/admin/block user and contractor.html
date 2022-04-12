@@ -1,0 +1,49 @@
+{% extends '/admin/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+        <h2 class="text-center font-weight-bold " style="color: #632343;">Block Users And Contractors </h2>
+
+  <form class="mt-2" id="form1" name="form1" method="post" action="">
+    <div class="form-row  ">
+      <div class="form-group col-md-6">
+        <div class="ml-4">
+          <select class="mdb-select md-form btn btn-success">
+            <option value="" disabled selected>contarctor list</option>
+            <option value="1">Option 1</option>
+
+          </select>
+          <label>
+            <input type="submit" name="Submit" value="search" class="btn btn-primary" />
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <table class="table mt-5">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Services</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i[1]}}{{i[2]}}</td>
+      <td>{{i[4]}}{{i[5]}}{{i[6]}}</td>
+      <td>{{i[7]}}</td>
+      <td>{{i[8]}}</td>
+      <td><a href="#" class="btn btn-danger">block</a></td>
+      <td><a href="#" class="btn btn-primary">un block</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+  </div>
+
+
+  {% endblock %}

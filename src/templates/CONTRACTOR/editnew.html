@@ -1,0 +1,38 @@
+{% extends '/CONTRACTOR/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container mt-5 pt-5">
+    <form id="form1" name="form1" method="post" action="/edit_new_vacancy">
+
+        <div class="row">
+          <div class="col-md-6 m-auto">
+              <div class="container  pl-5">
+                  <h2 class="text-center font-weight-bold"> EDIT JOBS</h2>
+
+              <div>
+                    <div class="form-group ">
+                          <label class="text-center font-weight-bold">JOB NAME</label>
+                          <input type="text" class="form-control"  name="textfield1" value="{{val[1]}}" >
+                      </div>
+           
+                      <div class="form-group">
+                          <label class="text-center font-weight-bold">VACCANCY</label>
+                          <input type="text" class="form-control"  name="textfield2" value="{{val[2]}}">
+                      </div>
+
+                      <div class="form-group">
+                        <label class="text-center font-weight-bold">DETAILS</label>
+                        <input type="text" class="form-control" name="textfield3"  value="{{val[3]}}">
+                      </div>
+              </div>
+
+                      <button type="submit" class="btn btn-primary float-right">update</button>
+                  </form>
+              </div>
+          </div>
+      </form>
+   </div>
+</div> </div>
+      {% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends '/CONTRACTOR/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+
+    <form id="form1" name="form1" method="post" action="/Get_view_request_Deatails" enctype="multipart/form-data">
+
+        <div class="row">
+          <div class="col-md-9 m-auto">
+              <div class="container mt-5 pl-5">
+                  <h2 class="text-center font-weight-bold ">WORK DETAILS</h2>
+                
+                    <div class="form-group font-weight-bold pt-5">
+                          <label for="">Current Work Deatails</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" required name="Deatail" rows="8"></textarea>
+                      </div>
+                      <div class="form-group font-weight-bold pt-1">
+                        <label for="">Current Work Deatail file</label>
+                      <input type="file" class="form-control" required name="file" >
+                    </div>
+          
+                      
+                      <button type="submit" class="btn btn-primary float-right">Submit</button>
+                  </form>
+              </div>
+          </div>
+      </form>
+    </div></div></div>
+  
+      {% endblock %}

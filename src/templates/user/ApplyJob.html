@@ -1,0 +1,25 @@
+{% extends '/user/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+
+      <form id="form1" name="form1" method="post" action="/GetApplyjob">
+
+        <h2 class="text-center font-weight-bold " style="color: #632343;">Your Resume</h2>
+        <div class="form-group">
+          <br><br><br>
+          <input type="file" class="form-control" required name="file">
+        </div>
+
+
+        <button type="submit" class="btn float-right mt-5" style="background-color:#632343;"> <span
+            style="color: white;">Submit </span></button>
+      </form>
+    </div>
+  </div>
+  </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends '/user/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+      <form action="/GetViewVaccancy" method="post">
+
+        <label for="" class="mt-5   font-weight-bold">Service</label>
+        <select name="catogary" class="form-select  ">
+          <option value="digital Markating" style="color: #632343;">digital Markating</option>
+          <option value="Plumber" style="color: #632343;">Plumber</option>
+          <option value="Engineer" style="color: #632343;">Engineer</option>
+        </select>
+        <label for="" class=" ml-3  font-weight-bold mt-5">Location</label>
+        <select name="place" class="form-select  ">
+          <option value="Areecode" style="color: #632343;">Areecode</option>
+          <option value="manjeri" style="color: #632343;">manjeri</option>
+          <option value="malapuram" style="color: #632343;">malapuram</option>
+        </select>
+
+
+
+        <button type="submit" class="btn  btn-primary ml-5"> <span style="color: white;">Search </span></button>
+
+
+
+      </form>
+
+      <table class="table mt-5">
+        <tr>
+          <th scope="col">Contractor Details </th>
+          <th scope="col">Service </th>
+          <th scope="col">Job </th>
+          <th scope="col">Vaccancy </th>
+          <th scope="col"> Job Details</th>
+        </tr>
+        {% for i in val %}
+        <tr>
+          <td>{{i[1]}} {{i[2]}} <br>{{i[4]}} {{i[7]}}</td>
+          <td>{{i[8]}}</td>
+          <td>{{i[11]}}</td>
+          <td>{{i[15]}}</td>
+          <td>{{i[12]}}</td>
+          <td><a href="" class="btn btn-primary">Apply</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

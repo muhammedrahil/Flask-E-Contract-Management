@@ -1,0 +1,27 @@
+{% extends '/admin/index.html' %}
+
+{% block content %}
+<form id="form1" name="form1" method="post" action="/getLogin">
+
+
+            <h2 class="text-center font-weight-bold ">LOGIN</h2>
+           
+
+            <p class="error text-danger"></p>
+
+                <div class="form-group">
+                    <label class="text-center font-weight-bold ">UserName</label>
+                    <input type="text" class="form-control"  name="textfield"  required
+                        placeholder="Enter name">
+                </div>
+
+            <p class="error text-danger"></p>
+
+                <div class="form-group">
+                    <label class="text-center font-weight-bold ">Password</label>
+                    <input type="password" class="form-control" name="textfield2"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required   placeholder="Password">
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
+      
+</form>
+{% endblock %}

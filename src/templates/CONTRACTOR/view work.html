@@ -1,0 +1,39 @@
+{% extends '/CONTRACTOR/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+      <h2 class="text-center font-weight-bold" style="color: #632343;">WORKS</h2>
+
+      <table class="table mt-5">
+        <tr>
+          <th scope="col">User Details </th>
+          <th scope="col">Work </th>
+          <th scope="col">Document</th>
+          <th scope="col">Contact Number</th>
+        </tr>
+        {% for i in val %}
+        <tr>
+          <td>{{i[1]}} {{i[2]}} <br>{{i[3]}} </td>
+          <td>{{i[10]}}</td>
+          <td><a href="{{ url_for('download', filename=i[11]) }}">{{i[11]}}</a></td>
+          <td>{{i[6]}}</td>
+          <td>
+            <a href="{{ url_for('download', filename=i[11]) }}"><input type="submit" name="Submit" value="view"
+                class="btn btn-primary ml-5 " /></a>
+          </td>
+          {% if i[12] == 'pending' %}
+          <td><a href="/Massege_view_work?id={{i[8]}}" class="btn btn-success">Accept</a></td>
+          {% else %}
+          <td><a href="" class="btn btn-primary">Massege</a></td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

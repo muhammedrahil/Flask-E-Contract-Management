@@ -1,0 +1,44 @@
+{% extends '/user/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+{% if val== none %}
+      <form id="form1" name="form1" method="post" action="/Get_Sent_Complaints">
+
+        <h2 class="text-center font-weight-bold pt-4" style="color: #632343;">Sent Complaint</h2>
+        <div class="form-group">
+          <br><br><br>
+          <input type="text" class="form-control" name="Complaint" required placeholder="Enter Complaint">
+        </div>
+
+
+        <button type="submit" class="btn float-right" style="background-color:#632343;"> <span
+            style="color: white;">Submit </span></button>
+      </form>
+      {% elif  val[4]== 'pending' %}
+      <div class="pt-5">
+
+        <h2 class="text-center font-weight-bold pt-5" style="color: #632343;">Complaint Pending please Wait </h2>
+      </div>
+      {% else %}
+      <h2 class="text-center font-weight-bold pt-4" style="color: #632343;">Complaint Status</h2>
+
+      <ul class="list-group mt-5 ">
+
+        <li class="list-group-item"> <span class="text-center font-weight-bold" style="color: #632343;"> Complaint
+            : </span> {{val[1]}}  </li>
+        <li class="list-group-item"><span class="text-center font-weight-bold" style="color: #632343;">Date
+            : </span>{{val[2]}}</li>
+        <li class="list-group-item"><span class="text-center font-weight-bold" style="color: #632343;">Replay
+            :</span> {{val[4]}} </li>
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+</div>
+{% endblock %}

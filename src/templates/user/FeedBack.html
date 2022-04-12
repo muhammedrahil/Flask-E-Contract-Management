@@ -1,0 +1,27 @@
+{% extends '/user/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+
+      <form id="form1" name="form1" method="post" action="/Get_FeedBack">
+
+        <h2 class="text-center font-weight-bold pt-4" style="color: #632343;">FeedBack</h2>
+        <div class="form-group">
+          <br><br><br>
+          <input type="text" class="form-control" name="FeedBack" required placeholder="Enter FeedBack">
+        </div>
+
+
+        <button type="submit" class="btn float-right" style="background-color:#632343;"> <span
+            style="color: white;">Submit </span></button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+{% endblock %}

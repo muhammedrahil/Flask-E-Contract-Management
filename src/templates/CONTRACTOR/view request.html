@@ -1,0 +1,49 @@
+{% extends '/CONTRACTOR/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+      <h2 class="text-center font-weight-bold" style="color: #632343;">WORK REQUESTS</h2>
+
+      <table class="table mt-5">
+        <tr>
+          <th scope="col">user Deatail</th>
+          <th scope="col">Work </th>
+          <th scope="col">Date</th>
+          <th scope="col"></th>
+        </tr>
+        {% for i in val%}
+        <tr>
+          <td>{{i[1]}} {{i[2]}} <br> {{i[3]}} {{i[6]}}</td>
+          <td>{{i[11]}}</td>
+          <td>{{i[12]}}</td>
+          {% if i[13] == 'pending' %}
+          
+            <td><a href="/accept_request?id={{i[8]}}" onclick="return confirm('Are you sure accept?')"
+              class="btn btn-primary ml-2">  accept  </a>
+          
+           <a href="/reject_request?id={{i[8]}}" onclick="return confirm('Are you sure?') "
+              class="btn btn-danger ml-2 ">  reject  </a>
+            <a href="{{ url_for('download', filename=i[11]) }}"
+                class="btn btn-primary ml-2 " > view work Document</a>
+          </td>
+          {% else %}
+          <td><a href="/view_request_Deatails?id={{i[8]}}" 
+              class="btn btn-success ">update work Deatails</a>
+              <a href="{{ url_for('download', filename=i[11]) }}"
+              class="btn btn-primary ml-2 " > view work Document</a>
+            
+            </td>
+              
+
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+  </div>
+</div>
+</div>
+{% endblock %}

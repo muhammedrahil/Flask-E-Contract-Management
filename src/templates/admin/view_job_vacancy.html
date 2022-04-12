@@ -1,0 +1,46 @@
+{% extends '/admin/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+        <h2 class="text-center font-weight-bold " style="color: #632343;"> Job Vaccancy </h2>
+
+  <form id="form1" name="form1" method="post" action="/view_job_vacancynew">
+    <div class="form-row pt-5 ">
+      <div class="form-group col-md-6">
+        <div class="ml-4">
+          <select class="mdb-select md-form btn btn-success" name="service">
+            <option value="" disabled selected>contarctor list</option>
+            {% for i in val %}
+            <option >{{i[8]}} </option>
+            {% endfor %}
+          </select>
+          <label>
+            <input type="submit" name="Submit" value="search" class="btn btn-primary" />
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+  <table class="table mt-5">
+    <tr>
+      <th scope="col">job</th>
+      <th scope="col">vaccancy</th>
+      <th scope="col">details</th>
+    </tr>
+ {% for i in val1 %}
+    <tr>
+      <td>{{i[8]}}</td>
+      <td>{{i[15]}}</td>
+      <td>
+        {{i[1]}}{{i[2]}} <br>
+        {{i[4]}}<br>
+        {{i[7]}}<br>
+        {{i[12]}}
+        <br>
+        {{i[14]}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endblock %}

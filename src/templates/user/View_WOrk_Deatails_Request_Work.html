@@ -1,0 +1,23 @@
+{% extends '/user/layout.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12 m-auto">
+    <div class="container ">
+      <h2 class="text-center font-weight-bold" style="color: #632343;">Contractor Work Details</h2>
+
+      <ul class="list-group mt-5 ">
+
+        <li class="list-group-item"> <span class="text-center font-weight-bold" style="color: #632343;"> Work Deatails
+            : </span> {{val[1]}} 
+        <li class="list-group-item"><span class="text-center font-weight-bold" style="color: #632343;">Work File
+            : </span><a href="{{ url_for('download', filename=val[2]) }}" class="btn btn-primary"> Work File</a> </li>
+      </ul>
+    </div>
+  </div>>
+  </form>
+
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends '/CONTRACTOR/layout.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12 m-auto">
+      <div class="container ">
+            <h2 class="text-center font-weight-bold " style="color: #632343;">ADD SKILL AND DEATAILS </h2>
+
+            <form id="form1" name="form1" method="post" action="/new_add_skill_and_vaccancy">
+            <label class="mt-2 font-weight-bold pt-4">skills</label>
+            <div class="form-group ">
+              <input type="text" class="form-control" name="textfield1" required pattern="[A-Z a-z.]{3,25}" aria-describedby="skills"
+                placeholder="Enter skills">
+            </div>
+            <label class=" font-weight-bold pt-4">experience</label>     
+            <div class="form-group">
+              <input type="text" class="form-control" name="textfield2"  required  placeholder="experience">
+            </div>
+            <label class=" font-weight-bold pt-4">Works</label>
+       <div class="form-group">         
+              <input type="file" class="form-control" name="Document" required >
+          </div>
+            <button type="submit" class="btn btn-primary col-md-12  float-right">Submit</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+
+    {% endblock %}
