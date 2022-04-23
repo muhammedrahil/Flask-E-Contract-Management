@@ -4,7 +4,6 @@
 <div class="row">
   <div class="col-md-12 m-auto">
     <div class="container ">
-      <h2 class="text-center font-weight-bold " style="color: #632343;">Request Work</h2>
 
       <table class="table mt-5">
         <tr>
@@ -17,16 +16,18 @@
         </tr>
         {% for i in val %}
         <tr>
-          <td>{{i[1]}} {{i[2]}} <br>{{i[4]}} {{i[7]}}</td>
+          <td><b>Name: </b>{{i[1]}} {{i[2]}} <br>
+            <b>Place: </b>{{i[4]}} <br>
+            <b>Phone Number: </b>{{i[7]}}</td>
           <td>{{i[8]}}</td>
           <td>{{i[14]}}</td>
-          <td>{{i[13]}}</td>
+          <td><a href="{{ url_for('download', filename=i[13]) }}" >Work <br> File</a></td>
           <td>{{i[15]}}</td>
           <td><a href="" class="btn btn-primary">Massage</a></td>
-          <td><a href="/View_WOrk_Deatails_Request_Work?id={{i[12]}}" class="btn btn-info">Work Details</a></td>
+          <td><a href="/View_WOrk_Deatails_Request_Work?id={{i[10]}}" class="btn btn-info">Work Detail</a></td>
           <td><a href="/RemoveViewWorkREquest?id={{i[10]}}" class="btn btn-danger"
               onclick="return confirm('Are you sure?') ">Remove Request</a></td>
-          <td><a href="/Sent_Complaints?id={{i[12]}}" class="btn btn-warning"> Complaint</a></td>
+          <td><a href="/Sent_Complaints?id={{i[12]}}{{i[10]}}" class="btn btn-warning"> Complaint</a></td>
           <td><a href="/FeedBack?id={{i[12]}}" class="btn btn-secondary"> FeedBack</a>
           </td>
         </tr>

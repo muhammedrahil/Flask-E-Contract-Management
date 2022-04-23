@@ -6,17 +6,24 @@
     <div class="container ">
       <form action="/GetViewVaccancy" method="post">
 
-        <label for="" class="mt-5   font-weight-bold">Service</label>
+        <label for="" class="   font-weight-bold">Service</label>
         <select name="catogary" class="form-select  ">
+
           <option value="digital Markating" style="color: #632343;">digital Markating</option>
           <option value="Plumber" style="color: #632343;">Plumber</option>
           <option value="Engineer" style="color: #632343;">Engineer</option>
+          <option value="Construct" style="color: #632343;">Construct</option>
+          <option value="Shop" style="color: #632343;">Shop</option>
+          <option value="Web Application Developer" style="color: #632343;">Web Application Developer</option>
         </select>
         <label for="" class=" ml-3  font-weight-bold mt-5">Location</label>
         <select name="place" class="form-select  ">
           <option value="Areecode" style="color: #632343;">Areecode</option>
           <option value="manjeri" style="color: #632343;">manjeri</option>
           <option value="malapuram" style="color: #632343;">malapuram</option>
+          <option value="mukkam" style="color: #632343;">mukkam</option>
+          <option value="kizisheri" style="color: #632343;">kizisheri</option>
+          <option value="kondotty" style="color: #632343;">kondotty</option>
         </select>
 
 
@@ -37,7 +44,7 @@
         </tr>
         {% for i in val %}
         <tr>
-          <td>{{i[1]}} {{i[2]}} <br>{{i[4]}} {{i[7]}}</td>
+          <td><b>Name : </b> {{i[1]}} {{i[2]}} <br><b>Place : </b> {{i[4]}} <br><b>Phone Number : </b> {{i[7]}}</td>
           <td>{{i[8]}}</td>
           <td>{{i[11]}}</td>
           <td>{{i[15]}}</td>

@@ -4,7 +4,6 @@
   <div class="row">
     <div class="col-md-12 m-auto">
       <div class="container ">
-        <h2 class="text-center font-weight-bold " style="color: #632343;">JOBS </h2>
 
   <form id="form1" name="form1" method="post" action="">
     <div class="row pt-1 ">
@@ -16,7 +15,7 @@
     </div>
   </form>
 
-  <table class="table mt-3">
+  <table class="table ">
     <tr>
       <th scope="col">JOB</th>
       <th scope="col">VACCANCY</th>
@@ -28,7 +27,8 @@
     <tr>
       <td>{{i[1]}}</td>
       <td>{{i[5]}}</td>
-      <td>{{i[2]}}<br>{{i[4]}}</td>
+      <td><b>Qualification : </b>{{i[2]}}<br>
+        <b>Expair Date : </b>{{i[4]}}</td>
       <td><a href="/edit_new?id={{i[0]}}" class="btn btn-info">edit</a>
       <a href="/delete?id={{i[0]}}" onclick="return confirm('Are you sure?')" class="btn btn-danger">delete</a></td>
 

@@ -35,6 +35,7 @@ def getLogin():
         return render_template("admin/home.html")
     elif result[3] =="contractor" :
         session['lid']= result[0]
+        print( session['lid'])
         return  render_template("CONTRACTOR/home.html")
     elif result[3] =="user" :
         session['uid']= result[0]
@@ -99,30 +100,7 @@ def logout():
     return redirect('/')
 
 
-# @app.route("/contractor")
-# def contractor():
-#     qry="SELECT contractor.* FROM login JOIN contractor ON login.loginid=contractor.loginid WHERE login.usertype ='pending'"
-#     res=select(qry)
-#     return render_template("admin/contractor.html",val=res)
 
-
-
-# @app.route("/AcceptContractor")
-# def AcceptContractor():
-#     id=request.args.get('id')
-#     accept='contractor'
-#     qry="UPDATE `login` SET `usertype`=%s WHERE `loginid`=%s"
-#     val=(accept,id)
-#     iud(qry,val)
-#     return '''<script>alert("accept successfully");window.location="/contractor"</script>'''
-
-
-# @app.route("/RejectContractor")
-# def RejectContractor():
-#     id=request.args.get('id')
-#     qry="DELETE FROM`login`WHERE `loginid`=%s"
-#     iud(qry,str(id))
-#     return '''<script>alert("reject successfully");window.location="/contractor"</script>'''
 
 @app.route("/ViewContractor")
 @login_required
@@ -148,21 +126,7 @@ def view_users():
     res=select(qry)
     return render_template("admin/view users.html",val=res)
 
-# @app.route("/view_job_vacancy")
-# def view_job_vacancy():
-#     qry = "SELECT * FROM `contractor`"
-#     res=select(qry)
-#     return render_template("admin/view_job_vacancy.html",val=res)
 
-
-
-# @app.route("/view_job_vacancynew",methods=['post'])
-# def view_job_vacancynew():
-#     service =request.form['service']
-#     qry = "SELECT `contractor`.*,`vaccancy`.* FROM `vaccancy` JOIN `contractor` ON `contractor`.`loginid`=`vaccancy`.`contractid` WHERE `contractor`.`sevice`=%s"
-#     val=(service)
-#     res=selectall(qry,val)
-#     return render_template("admin/view_job_vacancy.html",val1=res)
 
 @app.route("/view_feedback")
 # @login_required
@@ -210,7 +174,14 @@ def block_user_and_contractor():
     res = select(qry)
     return render_template("admin/block user and contractor.html",val=res)
 
-
+@app.route("/get_block_and_contractor",methods=['post'])
+def get_block_and_contractor():
+    servis =request.form['catogary']
+    place =request.form['place']
+    qry="SELECT * FROM `contractor` WHERE `sevice`=%s OR`place`=%s"
+    val1=(servis,place)
+    res=selectall(qry,val1)
+    return render_template("admin/get_block_user_and_contractor.html",val=res)
 
 @app.route("/manege_Vaccancy")
 # @login_required
@@ -250,6 +221,7 @@ def add_skill_and_vaccancy():
 @app.route("/new_add_skill_and_vaccancy",methods=['post'])
 def new_add_skill_and_vaccancy():
     conid=session['lid']
+    print(conid)
     skill = request.form['textfield1']
     exprience = request.form['textfield2']
     work = request.form['Document']
@@ -349,8 +321,8 @@ def view_feedbacks():
 @app.route("/view_request")
 # @login_required
 def view_request():
-    qry="SELECT users.*,`request`.* FROM `request` JOIN `users` ON `users`.`loginid`=`request`.`userid` "
-    res=select(qry)
+    qry="SELECT users.*,`request`.* FROM `request` JOIN `users` WHERE `request`.`conid`=%s "
+    res=selectall(qry,session['lid'])
     return render_template("CONTRACTOR/view request.html",val=res)
 
 @app.route("/accept_request")
@@ -374,6 +346,8 @@ def reject_request():
 @app.route("/view_request_Deatails")
 # @login_required
 def view_request_Deatails():
+    id = request.args.get('id')
+    session['requestid'] = id
     return render_template("CONTRACTOR/workDeatails.html")
 
 
@@ -384,8 +358,8 @@ def Get_view_request_Deatails():
     file = request.files['file']
     filename = secure_filename(file.filename)
     file.save(os.path.join("static",filename))
-    qry="INSERT INTO `workdeatails` VALUES (NULL,%s,%s,%s)"
-    val=(details,filename,session['lid'])
+    qry="INSERT INTO `workdeatails` VALUES (NULL,%s,%s,%s,%s)"
+    val=(details,filename,session['lid'],session['requestid'])
     iud(qry,val)
     return '''<script>alert("Add successfully");window.location="/view_request"</script>'''
 
@@ -472,7 +446,7 @@ def ViewVaccancy():
 def GetViewVaccancy():
     servis =request.form['catogary']
     place =request.form['place']
-    qry="SELECT `contractor`.*,`vaccancy`.* FROM `contractor` JOIN `vaccancy`  ON `contractor`.`cid`=`vaccancy`.`contractid`  WHERE `contractor`.`sevice`=%s OR `contractor`.`place`=%s"
+    qry="SELECT `contractor`.*,`vaccancy`.* FROM `contractor` JOIN `vaccancy`  ON `contractor`.`loginid`=`vaccancy`.`contractid`  WHERE `contractor`.`sevice`=%s OR `contractor`.`place`=%s"
     val1=(servis,place)
     res=selectall(qry,val1)
     return render_template("user/GetViewVaccancy.html",val=res)
@@ -486,9 +460,11 @@ def ApplyJob():
 
 @app.route("/GetApplyjob",methods=['post'])
 def GetApplyjob():
-    file =request.form['file']
+    fil =request.files['file']
+    filename = secure_filename(fil.filename)
+    fil.save(os.path.join("static",filename))
     qry="INSERT INTO `Applyjob` VALUES (NULL,%s,%s,CURDATE(),'pending',%s)"
-    val=(session['rid'],session['uid'],file)
+    val=(session['rid'],session['uid'],filename)
     iud(qry,val)
     return '''<script>alert("Apply successfully");window.location="/ViewVaccancy"</script>'''
 
@@ -539,16 +515,17 @@ def RemoveViewWorkREquest():
 # @login_required
 def Sent_Complaints():
     id = request.args.get('id')
-    session['Sid'] = id
-    qry="SELECT * FROM `complaint` WHERE `conid`=%s"
-    res=selectone(qry,id)
+    session['Sid'] = id[0]
+    session['rid'] = id[1]
+    qry="SELECT * FROM `complaint` WHERE `rid`=%s"
+    res=selectone(qry,id[1])
     return render_template("user/SentComplaint.html",val=res) 
 
 @app.route("/Get_Sent_Complaints",methods=['post'])
 def Get_Sent_Complaints():
     Complaint =request.form['Complaint']
-    qry="INSERT INTO `complaint` VALUES (NULL,%s,CURDATE(),%s,'pending',%s)"
-    val=(Complaint,session['uid'],session['Sid'])
+    qry="INSERT INTO `complaint` VALUES (NULL,%s,CURDATE(),%s,'pending',%s,%s)"
+    val=(Complaint,session['uid'],session['Sid'],session['rid'])
     iud(qry,val)
     return '''<script>alert(" successfully");window.location="/ViewWorkREquest"</script>'''
 
@@ -557,9 +534,12 @@ def Get_Sent_Complaints():
 def View_WOrk_Deatails_Request_Work():
     id = request.args.get('id')
     session['contraid'] = id
-    qry="SELECT * FROM `workdeatails` WHERE `cid`=%s"
+    qry="SELECT * FROM `workdeatails` WHERE  rid=%s  "
     res=selectone(qry,id)
-    return render_template("user/View_WOrk_Deatails_Request_Work.html",val=res) 
+    if (res == None):
+        return '''<script>alert(" sorry no update detailes");window.location="/ViewWorkREquest"</script>'''
+    else :
+        return render_template("user/View_WOrk_Deatails_Request_Work.html",val=res) 
 
 @app.route("/FeedBack")
 # @login_required

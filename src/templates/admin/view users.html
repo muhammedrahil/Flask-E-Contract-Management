@@ -4,9 +4,8 @@
   <div class="row">
     <div class="col-md-12 m-auto">
       <div class="container ">
-        <h2 class="text-center font-weight-bold " style="color: #632343;">Users</h2>
 
-  <table  class="table ">
+  <table  class="table mt-3 ">
     <tr>
       <th scope="col">Name </th>
       <th scope="col">Address </th>
@@ -15,7 +14,7 @@
     {% for i in val %}
     <tr>
       <td>{{i[1]}} {{i[2]}}</td>
-      <td>Place : {{i[3]}} <br>Post : {{i[4]}} <br>PinNumber : {{i[5]}}</td>
+      <td><b>Place</b>  : {{i[3]}} <br><b>Post</b>  : {{i[4]}} <br><b>PinNumber</b>  : {{i[5]}}</td>
       <td>&nbsp;{{i[6]}}</td>
     </tr>
       {% endfor %}

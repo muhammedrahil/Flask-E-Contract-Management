@@ -4,7 +4,6 @@
 <div class="row">
   <div class="col-md-12 m-auto">
     <div class="container ">
-      <h2 class="text-center font-weight-bold " style="color: #632343;">FEEDBACKS</h2>
 
       <table class="table mt-5">
         <tr>
@@ -15,7 +14,9 @@
         </tr>
         {% for i in val%}
         <tr>
-          <td>{{i[1]}} {{i[2]}} <br>{{i[3]}} <br>{{i[6]}}</td>
+          <td><b>Name : </b>{{i[1]}} {{i[2]}} <br>
+            <b>Place : </b>{{i[3]}} <br>
+            <b>Phone Number : </b>{{i[6]}}</td>
 
           <td>{{i[9]}} </td>
           <td>{{i[11]}} </td>

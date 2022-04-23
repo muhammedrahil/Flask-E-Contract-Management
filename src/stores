@@ -1,0 +1,40 @@
+# @app.route("/contractor")
+# def contractor():
+#     qry="SELECT contractor.* FROM login JOIN contractor ON login.loginid=contractor.loginid WHERE login.usertype ='pending'"
+#     res=select(qry)
+#     return render_template("admin/contractor.html",val=res)
+
+
+
+# @app.route("/AcceptContractor")
+# def AcceptContractor():
+#     id=request.args.get('id')
+#     accept='contractor'
+#     qry="UPDATE `login` SET `usertype`=%s WHERE `loginid`=%s"
+#     val=(accept,id)
+#     iud(qry,val)
+#     return '''<script>alert("accept successfully");window.location="/contractor"</script>'''
+
+
+# @app.route("/RejectContractor")
+# def RejectContractor():
+#     id=request.args.get('id')
+#     qry="DELETE FROM`login`WHERE `loginid`=%s"
+#     iud(qry,str(id))
+#     return '''<script>alert("reject successfully");window.location="/contractor"</script>'''
+
+# @app.route("/view_job_vacancy")
+# def view_job_vacancy():
+#     qry = "SELECT * FROM `contractor`"
+#     res=select(qry)
+#     return render_template("admin/view_job_vacancy.html",val=res)
+
+
+
+# @app.route("/view_job_vacancynew",methods=['post'])
+# def view_job_vacancynew():
+#     service =request.form['service']
+#     qry = "SELECT `contractor`.*,`vaccancy`.* FROM `vaccancy` JOIN `contractor` ON `contractor`.`loginid`=`vaccancy`.`contractid` WHERE `contractor`.`sevice`=%s"
+#     val=(service)
+#     res=selectall(qry,val)
+#     return render_template("admin/view_job_vacancy.html",val1=res)
