@@ -561,6 +561,7 @@ def Get_FeedBack():
 def Location():
 	return render_template('admin/index.html')
 
+
 if __name__ == "__main__":
     app.run(debug=True)
 

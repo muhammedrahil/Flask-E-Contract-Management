@@ -2,6 +2,161 @@
 
 {% block content %}
 
+  <head>
+    <title>Campus Map</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="https://cdn.klokantech.com/maptilerlayer/v1/index.js"></script>
+    <style>
+#map {
+width:100%;
+height: 600px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function () {
+var map,
+faisalabad = {lat:11.265369806331075, lng:75.8357048034668};
+var  map1;
+var marker = false;
+function addYourLocationButton (map, marker)
+{
+var controlDiv = document.createElement('div');
+
+var firstChild = document.createElement('button');
+firstChild.style.backgroundColor = '#fff';
+firstChild.style.border = 'none';
+firstChild.style.outline = 'none';
+firstChild.style.width = '28px';
+firstChild.style.height = '28px';
+firstChild.style.borderRadius = '2px';
+firstChild.style.boxShadow = '0 1px 4px rgba(0,0,0,0.3)';
+firstChild.style.cursor = 'pointer';
+firstChild.style.marginRight = '10px';
+firstChild.style.padding = '0';
+firstChild.title = 'Your Location';
+controlDiv.appendChild(firstChild);
+
+var secondChild = document.createElement('div');
+secondChild.style.margin = '5px';
+secondChild.style.width = '18px';
+secondChild.style.height = '18px';
+secondChild.style.backgroundImage = 'url(https://maps.gstatic.com/tactile/mylocation/mylocation-sprite-2x.png)';
+secondChild.style.backgroundSize = '180px 18px';
+secondChild.style.backgroundPosition = '0 0';
+secondChild.style.backgroundRepeat = 'no-repeat';
+firstChild.appendChild(secondChild);
+
+google.maps.event.addListener(map, 'center_changed', function () {
+  secondChild.style['background-position'] = '0 0';
+});
+
+firstChild.addEventListener('click', function () {
+  var imgX = '0',
+      animationInterval = setInterval(function () {
+          imgX = imgX === '-18' ? '0' : '-18';
+          secondChild.style['background-position'] = imgX+'px 0';
+      }, 500);
+
+  if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+          var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+          map.setCenter(latlng);
+          clearInterval(animationInterval);
+
+          secondChild.style['background-position'] = '-144px 0';
+
+
+      });
+  } else {
+      clearInterval(animationInterval);
+      secondChild.style['background-position'] = '0 0';
+  }
+});
+
+controlDiv.index = 1;
+map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(controlDiv);
+
+}
+// *************************************************************************************************
+
+  //Showing Current Poistion on Google Map
+  function showPos(position) {
+    latt = position.coords.latitude;
+    long = position.coords.longitude;
+    var x = "Your current location is (" + "Latitude: " + latt + ", " + "Longitude: " + long + ")";
+    document.getElementById("h").innerHTML = x;
+    var lattlong = new google.maps.LatLng(latt, long);
+    var myOptions = {
+      center: lattlong,
+      zoom: 15,
+      mapTypeControl: true,
+      navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+    }
+    var maps = new google.maps.Map(document.getElementById("demo"), myOptions);
+    var markers =
+      new google.maps.Marker({ position: lattlong, map: maps, title: "You are here!" });
+  }
+
+  //Handling Error and Rejection
+
+
+// *************************************************************************************************
+
+
+map = new google.maps.Map(document.getElementById('map'), {
+zoom: 15,
+center: faisalabad
+});
+
+google.maps.event.addListener(map, 'click', function(event) {
+  //Get the location that the user clicked.
+  var clickedLocation = event.latLng;
+  //If the marker hasn't been added.
+
+  if(marker === false){
+      //Create the marker.
+      marker = new google.maps.Marker({
+          position: clickedLocation,
+          map: map,
+          draggable: true //make it draggable
+      });
+      //Listen for drag events!
+      google.maps.event.addListener(marker, 'dragend', function(event){
+          markerLocation();
+      });
+  } else{
+      //Marker has already been added, so just change its location.
+      marker.setPosition(clickedLocation);
+  }
+  //Get the marker's location.
+  markerLocation();
+});
+
+var myMarker = new google.maps.Marker({
+map: map,
+animation: google.maps.Animation.DROP,
+position: faisalabad
+});
+addYourLocationButton(map, myMarker);
+
+function markerLocation(){
+//Get location.
+
+var currentLocation = marker.getPosition();
+//Add lat and lng values to a field that we can save.
+document.getElementById('lat').value = currentLocation.lat(); //latitude
+document.getElementById('lng').value = currentLocation.lng(); //longitude
+}
+
+});
+</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
 
 <div class="row">
   <div class="col-md-12">
@@ -21,7 +176,9 @@
                 <br><br>
                 <input type="file" class="form-control" required name="Document">
               </div>
-              <a onclick="getlocation()" class="btn btn-warning"> Show Position</a>
+               <div id="map"></div>
+
+  </form>
               <button type="submit" class="btn float-right" style="background-color:#632343;"> <span
                   style="color: white;">Add
                   Work </span></button>
@@ -40,52 +197,22 @@
   </div>
   
 </div>
+</style>
 
-<script src="https://maps.google.com/maps/api/js?sensor=false"> </script>
 
-<script type="text/javascript">
-  function getlocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPos, showErr);
-    }
-    else {
-      alert("Sorry! your Browser does not support Geolocation API")
-    }
-  }
-  //Showing Current Poistion on Google Map  
-  function showPos(position) {
-    latt = position.coords.latitude;
-    long = position.coords.longitude;
-    var x = "Your current location is (" + "Latitude: " + latt + ", " + "Longitude: " + long + ")";
-    document.getElementById("h").innerHTML = x;
-    var lattlong = new google.maps.LatLng(latt, long);
-    var myOptions = {
-      center: lattlong,
-      zoom: 15,
-      mapTypeControl: true,
-      navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
-    }
-    var maps = new google.maps.Map(document.getElementById("demo"), myOptions);
-    var markers =
-      new google.maps.Marker({ position: lattlong, map: maps, title: "You are here!" });
-  }
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body >
+    <div id="map"></div>
+   <h2>Chosen Location</h2>
+  <form method="post" action="/cmploc">
+      <input type="text" name="lat" id="lat" readonly="yes"><br>
+      <input type="text" name="lng" id="lng" readonly="yes"><br/>
+      <input type="submit" value="Submit" class="btn btn-primary">
 
-  //Handling Error and Rejection  
-  function showErr(error) {
-    switch (error.code) {
-      case error.PERMISSION_DENIED:
-        alert("User denied the request for Geolocation API.");
-        break;
-      case error.POSITION_UNAVAILABLE:
-        alert("USer location information is unavailable.");
-        break;
-      case error.TIMEOUT:
-        alert("The request to get user location timed out.");
-        break;
-      case error.UNKNOWN_ERROR:
-        alert("An unknown error occurred.");
-        break;
-    }
-  }        </script>
+  </form>
+  </body>
+</html>
+
 
 {% endblock %}

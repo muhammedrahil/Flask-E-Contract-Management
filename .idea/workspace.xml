@@ -2,38 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e535898-f12f-4960-835c-9ab4fe79d7d8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/templates/admin/contractor.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Econtract.iml" afterPath="$PROJECT_DIR$/.idea/Econtract.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/ADD SKILL AND DETAILS.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/ADD SKILL AND DETAILS.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/MANEGE VACCANCY.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/MANEGE VACCANCY.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/VIEW JOB REQUEST.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/VIEW JOB REQUEST.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/addnew.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/addnew.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/editnew.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/editnew.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/home.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/layout.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/view feedback.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/view feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/view request.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/view request.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/view work.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/view work.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/CONTRACTOR/workDeatails.html" afterPath="$PROJECT_DIR$/src/templates/CONTRACTOR/workDeatails.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/ViewContractor.html" afterPath="$PROJECT_DIR$/src/templates/admin/ViewContractor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/block user and contractor.html" afterPath="$PROJECT_DIR$/src/templates/admin/block user and contractor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/view complains.html" afterPath="$PROJECT_DIR$/src/templates/admin/view complains.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/view feedback.html" afterPath="$PROJECT_DIR$/src/templates/admin/view feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/view users.html" afterPath="$PROJECT_DIR$/src/templates/admin/view users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/view_job_vacancy.html" afterPath="$PROJECT_DIR$/src/templates/admin/view_job_vacancy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/home.html" afterPath="$PROJECT_DIR$/src/templates/admin/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/index.html" afterPath="$PROJECT_DIR$/src/templates/admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/admin/layout.html" afterPath="$PROJECT_DIR$/src/templates/admin/layout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/AddWork.html" afterPath="$PROJECT_DIR$/src/templates/user/AddWork.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/ApplyJob.html" afterPath="$PROJECT_DIR$/src/templates/user/ApplyJob.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/FeedBack.html" afterPath="$PROJECT_DIR$/src/templates/user/FeedBack.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/GetViewContractorWork.html" afterPath="$PROJECT_DIR$/src/templates/user/GetViewContractorWork.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/GetViewVaccancy.html" afterPath="$PROJECT_DIR$/src/templates/user/GetViewVaccancy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/SentComplaint.html" afterPath="$PROJECT_DIR$/src/templates/user/SentComplaint.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/ViewContractorWork.html" afterPath="$PROJECT_DIR$/src/templates/user/ViewContractorWork.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/ViewVaccancy.html" afterPath="$PROJECT_DIR$/src/templates/user/ViewVaccancy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/ViewWorkREquest.html" afterPath="$PROJECT_DIR$/src/templates/user/ViewWorkREquest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/View_WOrk_Deatails_Request_Work.html" afterPath="$PROJECT_DIR$/src/templates/user/View_WOrk_Deatails_Request_Work.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/WorkDeatail.html" afterPath="$PROJECT_DIR$/src/templates/user/WorkDeatail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/WorkDeitailFile.html" afterPath="$PROJECT_DIR$/src/templates/user/WorkDeitailFile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/home.html" afterPath="$PROJECT_DIR$/src/templates/user/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/user/layout.html" afterPath="$PROJECT_DIR$/src/templates/user/layout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/webcodes.py" afterPath="$PROJECT_DIR$/src/webcodes.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +26,8 @@
       <file leaf-file-name="webcodes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/webcodes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="426" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="567" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#2#11#0" expanded="true" />
               </folding>
@@ -83,7 +61,7 @@
             <state relative-caret-position="150">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
-                <marker date="1649984500218" expanded="true" signature="775:778" ph="..." />
+                <marker date="1651647522644" expanded="true" signature="775:778" ph="..." />
               </folding>
             </state>
           </provider>
@@ -92,8 +70,8 @@
       <file leaf-file-name="AddWork.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/user/AddWork.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="5000">
+              <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -207,7 +185,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,11 +234,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dgold" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ORVBA" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
@@ -356,9 +334,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1030" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1881081" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2308108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969698" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31878787" sideWeight="0.20972973" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34787878" sideWeight="0.79027027" order="2" side_tool="false" content_ui="tabs" />
@@ -696,23 +673,23 @@
         <state relative-caret-position="150">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <marker date="1649984500218" expanded="true" signature="775:778" ph="..." />
+            <marker date="1651647522644" expanded="true" signature="775:778" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/user/AddWork.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="5000">
+          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/webcodes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="426" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="567" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#2#11#0" expanded="true" />
           </folding>
